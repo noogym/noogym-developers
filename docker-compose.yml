@@ -1,0 +1,13 @@
+services:
+  noogym-developers:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: noogym-developers
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

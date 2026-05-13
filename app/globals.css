@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #05070a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 72% 8%, rgba(182, 255, 0, 0.12), transparent 24rem),
+    radial-gradient(circle at 10% 35%, rgba(0, 164, 255, 0.08), transparent 26rem),
+    linear-gradient(135deg, #05070a 0%, #070b0f 48%, #020304 100%);
+  color: #f7f7f7;
+}
+
+::selection {
+  background: rgba(182, 255, 0, 0.32);
+  color: white;
+}
+
+@layer components {
+  .noogym-panel {
+    @apply border border-white/10 bg-white/[0.035] shadow-panel backdrop-blur-xl;
+  }
+
+  .noogym-card {
+    @apply noogym-panel rounded-lg;
+  }
+
+  .lime-text {
+    @apply text-noogym-lime;
+  }
+
+  .lime-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-noogym-lime px-5 py-3 text-sm font-semibold text-black shadow-glow transition hover:bg-[#cbff38] focus:outline-none focus:ring-2 focus:ring-noogym-lime/70 focus:ring-offset-2 focus:ring-offset-noogym-black;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-noogym-lime/60 hover:text-noogym-lime focus:outline-none focus:ring-2 focus:ring-noogym-lime/60 focus:ring-offset-2 focus:ring-offset-noogym-black;
+  }
+
+  .mono-chip {
+    @apply rounded border border-noogym-lime/20 bg-noogym-lime/10 px-2 py-0.5 font-mono text-xs text-noogym-lime;
+  }
+}
+
+.code-scroll::-webkit-scrollbar,
+.thin-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-scroll::-webkit-scrollbar-thumb,
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: rgba(182, 255, 0, 0.32);
+  border-radius: 999px;
+}
