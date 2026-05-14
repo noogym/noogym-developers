@@ -1,4 +1,5 @@
 import { ArrowRight, Box, Clock3, Filter, KeyRound, LockKeyhole, Server } from "lucide-react";
+import Link from "next/link";
 import { CodeBlock } from "@/components/developer/CodeBlock";
 import { RightAsideCard } from "@/components/developer/RightAsideCard";
 import { StatusBadge } from "@/components/developer/StatusBadge";
@@ -90,26 +91,26 @@ export default function MembersListPage() {
         <RightAsideCard title="Links rápidos">
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
             {[
-              ["Autenticação", LockKeyhole],
-              ["Filtros", Filter],
-              ["Paginação", Box],
-              ["Códigos de Erro", Server],
-            ].map(([label, Icon]) => (
-              <a key={label as string} href="#" className="flex items-center justify-between rounded-md p-3 text-sm text-white/84 hover:bg-white/[0.05] hover:text-noogym-lime">
+              ["Autenticacao", "/guides#auth", LockKeyhole],
+              ["Filtros", "/apis/members/list", Filter],
+              ["Paginacao", "/apis/members/list", Box],
+              ["Codigos de Erro", "/apis", Server],
+            ].map(([label, href, Icon]) => (
+              <Link key={label as string} href={href as string} className="flex items-center justify-between rounded-md p-3 text-sm text-white/84 hover:bg-white/[0.05] hover:text-noogym-lime">
                 <span className="flex items-center gap-3">
                   <Icon className="h-4 w-4 text-noogym-lime" />
                   {label as string}
                 </span>
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             ))}
           </div>
         </RightAsideCard>
         <RightAsideCard title="Teste esta API">
           <p className="text-sm leading-6 text-noogym-muted">Experimente esta requisição no nosso ambiente de testes.</p>
-          <button className="ghost-button mt-4 w-full border-noogym-lime/70 py-2.5 text-noogym-lime">
+          <Link href="/dashboard" className="ghost-button mt-4 w-full border-noogym-lime/70 py-2.5 text-noogym-lime">
             Abrir no Sandbox
-          </button>
+          </Link>
         </RightAsideCard>
       </aside>
     </div>

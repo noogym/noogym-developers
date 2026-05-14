@@ -1,4 +1,5 @@
 import { ArrowRight, Info, KeyRound } from "lucide-react";
+import Link from "next/link";
 import { CodeBlock } from "@/components/developer/CodeBlock";
 import { GlowIllustrationCard } from "@/components/developer/GlowIllustrationCard";
 import { GuideStepCard } from "@/components/developer/GuideStepCard";
@@ -49,10 +50,10 @@ export default function GuidesPage() {
                 <Info className="mt-0.5 h-5 w-5 shrink-0 text-noogym-lime" />
                 Após a criação, você poderá criar aplicações, gerar chaves de API e acessar nossos recursos.
               </p>
-              <button className="lime-button shrink-0">
+              <Link href="/register" className="lime-button shrink-0">
                 Criar conta gratuita
                 <ArrowRight className="h-4 w-4" />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -107,18 +108,18 @@ export default function GuidesPage() {
 
         <RightAsideCard title="Autenticação rápida">
           <CodeBlock code={authSnippet} language="bash" label="cURL" />
-          <button className="ghost-button mt-4 py-2.5">
+          <Link href="/guides#auth" className="ghost-button mt-4 py-2.5">
             Ver mais detalhes
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </Link>
         </RightAsideCard>
 
         <RightAsideCard title="Exemplo de Resposta">
           <CodeBlock code={memberResponse} language="json" label="200 OK" />
-          <button className="ghost-button mt-4 py-2.5">
+          <Link href="/apis/members/list" className="ghost-button mt-4 py-2.5">
             Ver documentação da API
             <KeyRound className="h-4 w-4" />
-          </button>
+          </Link>
         </RightAsideCard>
       </aside>
     </div>

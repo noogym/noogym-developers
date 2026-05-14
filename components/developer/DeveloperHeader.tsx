@@ -12,6 +12,7 @@ import { SearchInput } from "./SearchInput";
 export function DeveloperHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [themePreview, setThemePreview] = useState(false);
 
   return (
     <>
@@ -58,13 +59,22 @@ export function DeveloperHeader() {
 
           <div className="ml-auto hidden items-center gap-3 md:flex">
             <SearchInput />
-            <button className="rounded-md border border-white/10 p-2 text-white transition hover:border-noogym-lime/50 hover:text-noogym-lime" aria-label="Modo escuro">
+            <button
+              type="button"
+              aria-label="Alternar destaque visual"
+              aria-pressed={themePreview}
+              onClick={() => setThemePreview((value) => !value)}
+              className={cn(
+                "rounded-md border border-white/10 p-2 text-white transition hover:border-noogym-lime/50 hover:text-noogym-lime",
+                themePreview && "border-noogym-lime/50 bg-noogym-lime/10 text-noogym-lime",
+              )}
+            >
               <Moon className="h-4 w-4" />
             </button>
-            <button className="rounded-md border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-noogym-lime/50">
+            <Link href="/login" className="rounded-md border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-noogym-lime/50">
               Entrar
-            </button>
-            <button className="lime-button px-5 py-2.5">Criar conta</button>
+            </Link>
+            <Link href="/register" className="lime-button px-5 py-2.5">Criar conta</Link>
           </div>
         </div>
       </header>
@@ -91,8 +101,8 @@ export function DeveloperHeader() {
               ))}
             </nav>
             <div className="mt-6 grid gap-3">
-              <button className="ghost-button w-full py-2.5">Entrar</button>
-              <button className="lime-button w-full py-2.5">Criar conta</button>
+              <Link href="/login" onClick={() => setMobileOpen(false)} className="ghost-button w-full py-2.5">Entrar</Link>
+              <Link href="/register" onClick={() => setMobileOpen(false)} className="lime-button w-full py-2.5">Criar conta</Link>
             </div>
           </div>
         </div>

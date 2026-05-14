@@ -1,4 +1,5 @@
 import { ArrowRight, Check, CheckCircle2, Mail, TrendingUp } from "lucide-react";
+import Link from "next/link";
 import { GlowIllustrationCard } from "@/components/developer/GlowIllustrationCard";
 import { RightAsideCard } from "@/components/developer/RightAsideCard";
 import { StatusBadge } from "@/components/developer/StatusBadge";
@@ -88,12 +89,12 @@ export default function StatusPage() {
         </section>
 
         <section className="noogym-card p-5">
-          <div className="mb-4 flex items-center justify-between">
+          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <h2 className="text-xl font-semibold text-white">Histórico de incidentes</h2>
-            <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-noogym-lime">
+            <Link href="/status" className="inline-flex items-center gap-2 text-sm font-semibold text-noogym-lime">
               Ver todos
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
           <div className="flex flex-col gap-4 rounded-lg border border-white/10 p-4 md:flex-row md:items-center">
             <CheckCircle2 className="h-6 w-6 shrink-0 text-noogym-lime" />
@@ -143,20 +144,20 @@ export default function StatusPage() {
               </div>
             ))}
           </div>
-          <a href="#" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-noogym-lime">
+          <Link href="/status" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-noogym-lime">
             Ver métricas detalhadas
             <TrendingUp className="h-4 w-4" />
-          </a>
+          </Link>
         </RightAsideCard>
 
         <RightAsideCard title="Assine as atualizações">
           <p className="text-sm leading-6 text-noogym-muted">Receba notificações sobre incidentes, manutenções e atualizações.</p>
-          <div className="mt-4 flex gap-2">
+          <div className="mt-4 flex flex-col gap-2 sm:flex-row">
             <input
               className="min-w-0 flex-1 rounded-md border border-white/10 bg-black/30 px-3 py-2.5 text-sm outline-none placeholder:text-noogym-muted focus:border-noogym-lime/60"
               placeholder="Seu melhor e-mail"
             />
-            <button className="lime-button px-4 py-2.5">Inscrever-se</button>
+            <a href="mailto:developers@noogym.ao?subject=Atualizacoes%20de%20status%20Noogym" className="lime-button px-4 py-2.5">Inscrever-se</a>
           </div>
           <p className="mt-3 flex items-center gap-2 text-xs text-noogym-muted">
             <Mail className="h-3.5 w-3.5 text-noogym-lime" />

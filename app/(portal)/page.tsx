@@ -99,12 +99,14 @@ export default function DeveloperHome() {
               </p>
             </div>
           </div>
-          <div className="flex w-full gap-2 md:max-w-md">
+          <div className="flex w-full flex-col gap-2 sm:flex-row md:max-w-md">
             <input
               className="min-w-0 flex-1 rounded-md border border-white/10 bg-black/30 px-4 py-3 text-sm outline-none placeholder:text-noogym-muted focus:border-noogym-lime/60"
               placeholder="Seu melhor e-mail"
             />
-            <button className="lime-button shrink-0">Inscrever-se</button>
+            <a href="mailto:developers@noogym.ao?subject=Newsletter%20Noogym%20Developer" className="lime-button shrink-0">
+              Inscrever-se
+            </a>
           </div>
         </section>
       </div>
