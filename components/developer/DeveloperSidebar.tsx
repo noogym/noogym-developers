@@ -105,9 +105,9 @@ export function DeveloperSidebar() {
                 <p className="mt-2 text-xs leading-5 text-noogym-muted">
                   Fale com nosso time de suporte para desenvolvedores.
                 </p>
-                <button className="mt-4 rounded-md bg-noogym-lime px-4 py-2 text-xs font-semibold text-black">
+                <a href="mailto:suporte@noogym.ao?subject=Ticket%20Noogym%20Developer" className="mt-4 inline-flex rounded-md bg-noogym-lime px-4 py-2 text-xs font-semibold text-black">
                   Abrir ticket
-                </button>
+                </a>
               </div>
               <LifeBuoy className="h-7 w-7 text-noogym-lime" />
             </div>

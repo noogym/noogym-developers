@@ -37,11 +37,11 @@ export default function SdksPage() {
             <h2 className="text-2xl font-semibold text-white">JavaScript / TypeScript SDK</h2>
             <p className="mt-2 text-sm text-noogym-muted">O SDK oficial para aplicações Node.js, front-end e full-stack.</p>
           </div>
-          <div className="mb-4 flex gap-8 border-b border-white/10 text-sm">
+          <div className="mb-4 flex gap-8 overflow-x-auto border-b border-white/10 text-sm">
             {["Instalação", "Uso básico", "Exemplo completo"].map((tab, index) => (
-              <button key={tab} className={`pb-3 ${index === 1 ? "border-b-2 border-noogym-lime text-white" : "text-noogym-muted"}`}>
+              <Link key={tab} href={`/sdks?tab=${index}`} className={`shrink-0 pb-3 ${index === 1 ? "border-b-2 border-noogym-lime text-white" : "text-noogym-muted"}`}>
                 {tab}
-              </button>
+              </Link>
             ))}
           </div>
           <CodeBlock code={tsExample} language="typescript" label="TypeScript" />
@@ -56,7 +56,7 @@ export default function SdksPage() {
             <h2 className="text-lg font-semibold text-white">Não encontrou o que precisa?</h2>
             <p className="mt-1 text-sm text-noogym-muted">Fale com nosso time de suporte para desenvolvedores e tire suas dúvidas.</p>
           </div>
-          <button className="lime-button">Abrir ticket</button>
+          <a href="mailto:suporte@noogym.ao?subject=Ticket%20Noogym%20Developer" className="lime-button">Abrir ticket</a>
         </section>
       </div>
 

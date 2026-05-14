@@ -66,12 +66,12 @@ export default function ApisPage() {
               ["Produção", "https://api.noogym.ao"],
             ].map(([label, url]) => (
               <div key={label} className="flex items-center justify-between rounded-md border border-white/10 p-4">
-                <div>
+                <div className="min-w-0">
                   <p className="flex items-center gap-2 font-semibold text-white">
                     <span className="h-2.5 w-2.5 rounded-full bg-noogym-lime" />
                     {label}
                   </p>
-                  <p className="mt-1 text-sm text-noogym-muted">{url}</p>
+                  <p className="mt-1 break-all text-sm text-noogym-muted">{url}</p>
                 </div>
                 <Copy className="h-4 w-4 text-noogym-lime" />
               </div>
@@ -95,9 +95,9 @@ export default function ApisPage() {
 
         <RightAsideCard title="Teste a API agora">
           <p className="text-sm leading-6 text-noogym-muted">Explore os endpoints disponíveis no ambiente de testes.</p>
-          <button className="ghost-button mt-4 w-full border-noogym-lime/70 py-2.5 text-noogym-lime">
+          <Link href="/dashboard" className="ghost-button mt-4 w-full border-noogym-lime/70 py-2.5 text-noogym-lime">
             Abrir no Sandbox
-          </button>
+          </Link>
         </RightAsideCard>
       </aside>
     </div>
